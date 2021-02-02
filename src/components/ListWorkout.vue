@@ -17,20 +17,19 @@
       </tr>
 
       <!-- Update/Delete -->
-      <tr v-for="(user, index) in users" v-bind:key="{ index }">
-        <td><input type="text" v-model="user.username" /></td>
-        <td><input type="text" v-model="user.name" /></td>
-        <td><input type="text" v-model="user.email" /></td>
+      <tr v-for="(workout, index) in workouts" v-bind:key="{ index }">
+        <td><input type="text" v-model="workout.name" /></td>
+        <td><input type="text" v-model="workout.rest" /></td>
         <td>
           <input
             type="button"
             value="Update"
-            @click="updateRecord(index, user.id)"
+            @click="updateRecord(index, workout.id)"
           />&nbsp;
           <input
             type="button"
             value="Delete"
-            @click="deleteRecord(index, user.id)"
+            @click="deleteRecord(index, workout.id)"
           />
         </td>
       </tr>
@@ -39,6 +38,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "ListWorkout",
 
@@ -55,7 +55,7 @@ export default {
           request: 1,
         })
         .then(function(response) {
-          app.workouts = response.data;
+          this.workouts = response.data;
         })
         .catch(function(error) {
           console.log(error);
@@ -71,11 +71,11 @@ export default {
           })
           .then(function(response) {
             // Fetch records
-            app.allRecords();
+            this.allRecords();
 
             // Empty values
-            app.name = "";
-            app.rest = "";
+            this.name = "";
+            this.rest = "";
 
             alert(response.data);
           })
@@ -115,7 +115,7 @@ export default {
         })
         .then(function(response) {
           // Remove index from users
-          app.workouts.splice(index, 1);
+          this.workouts.splice(index, 1);
           alert(response.data);
         })
         .catch(function(error) {
