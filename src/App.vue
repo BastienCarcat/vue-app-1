@@ -1,25 +1,14 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary"></v-app-bar>
-
+    <v-app-bar app>
+      <router-link to="/">Home</router-link>
+    </v-app-bar>
     <v-main>
-      <ListWorkout />
+      <v-container fluid>
+        <router-view />
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
-<script>
-import ListWorkout from "./components/ListWorkout";
-
-export default {
-  name: "App",
-
-  components: {
-    ListWorkout,
-  },
-
-  data: () => ({
-    //
-  }),
-};
-</script>
+<style lang="scss"></style>
