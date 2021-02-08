@@ -1247,7 +1247,7 @@
   dependencies:
     "@vue/cli-shared-utils" "^4.5.11"
 
-"@vue/cli-plugin-vuex@^4.5.11":
+"@vue/cli-plugin-vuex@^4.5.11", "@vue/cli-plugin-vuex@~4.5.0":
   version "4.5.11"
   resolved "https://registry.npm.taobao.org/@vue/cli-plugin-vuex/download/@vue/cli-plugin-vuex-4.5.11.tgz?cache=0&sync_timestamp=1611327511678&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-vuex%2Fdownload%2F%40vue%2Fcli-plugin-vuex-4.5.11.tgz#f6f619bcfb66c86cc45340d73152844635e548bd"
   integrity sha1-9vYZvPtmyGzEU0DXMVKERjXlSL0=
@@ -2995,6 +2995,11 @@ deepmerge@^1.5.2:
   version "1.5.2"
   resolved "https://registry.npm.taobao.org/deepmerge/download/deepmerge-1.5.2.tgz?cache=0&sync_timestamp=1593091003052&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdeepmerge%2Fdownload%2Fdeepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
   integrity sha1-EEmdhohEza1P7ghC34x/bwyVp1M=
+
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.npm.taobao.org/deepmerge/download/deepmerge-4.2.2.tgz?cache=0&sync_timestamp=1593091003052&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdeepmerge%2Fdownload%2Fdeepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha1-RNLqNnm49NT/ujPwPYZfwee/SVU=
 
 default-gateway@^4.2.0:
   version "4.2.0"
@@ -7012,7 +7017,7 @@ safe-regex@^1.1.0:
   resolved "https://registry.npm.taobao.org/safer-buffer/download/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
 
-sass-loader@^10.0.0:
+sass-loader@^10.1.1:
   version "10.1.1"
   resolved "https://registry.npm.taobao.org/sass-loader/download/sass-loader-10.1.1.tgz?cache=0&sync_timestamp=1610373152427&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-10.1.1.tgz#4ddd5a3d7638e7949065dd6e9c7c04037f7e663d"
   integrity sha1-Td1aPXY455SQZd1unHwEA39+Zj0=
@@ -7023,10 +7028,10 @@ sass-loader@^10.0.0:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.32.0:
-  version "1.32.5"
-  resolved "https://registry.npm.taobao.org/sass/download/sass-1.32.5.tgz?cache=0&sync_timestamp=1611118710175&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass%2Fdownload%2Fsass-1.32.5.tgz#2882d22ad5748c05fa9bff6c3b0ffbc4f4b9e1dc"
-  integrity sha1-KILSKtV0jAX6m/9sOw/7xPS54dw=
+sass@^1.32.6:
+  version "1.32.6"
+  resolved "https://registry.npm.taobao.org/sass/download/sass-1.32.6.tgz?cache=0&sync_timestamp=1612222111461&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass%2Fdownload%2Fsass-1.32.6.tgz#e3646c8325cd97ff75a8a15226007f3ccd221393"
+  integrity sha1-42RsgyXNl/91qKFSJgB/PM0iE5M=
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -8184,7 +8189,7 @@ vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.2.0:
+vue-router@^3.5.1:
   version "3.5.1"
   resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.5.1.tgz#edf3cf4907952d1e0583e079237220c5ff6eb6c9"
   integrity sha1-7fPPSQeVLR4Fg+B5I3Igxf9utsk=
@@ -8224,10 +8229,15 @@ vuetify-loader@^1.7.0:
     file-loader "^6.2.0"
     loader-utils "^2.0.0"
 
-vuetify@^2.4.0:
+vuetify@^2.4.3:
   version "2.4.3"
   resolved "https://registry.npm.taobao.org/vuetify/download/vuetify-2.4.3.tgz?cache=0&sync_timestamp=1611250314023&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuetify%2Fdownload%2Fvuetify-2.4.3.tgz#8d6f15dde396e81f64e130d8ac0bc272e030879c"
   integrity sha1-jW8V3eOW6B9k4TDYrAvCcuAwh5w=
+
+vuex@^3.4.0:
+  version "3.6.2"
+  resolved "https://registry.npm.taobao.org/vuex/download/vuex-3.6.2.tgz?cache=0&sync_timestamp=1611671854067&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuex%2Fdownload%2Fvuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
+  integrity sha1-I2vAhqhww655lG8QfxbeWdWJXnE=
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"
