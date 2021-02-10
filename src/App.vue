@@ -4,7 +4,7 @@
       <!-- <v-btn icon fab color="red" @click="$router.go(-1)">
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn> -->
-      <v-toolbar-title>Page title</v-toolbar-title>
+      <v-toolbar-title>Carnet de suivis d'entrainement</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
     <v-main>

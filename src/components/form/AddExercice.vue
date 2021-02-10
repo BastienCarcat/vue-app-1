@@ -12,7 +12,7 @@
               <v-col cols="12">
                 <v-text-field
                   v-model="name"
-                  label="Nom *"
+                  label="Nom de l'exercice *"
                   required
                   :rules="ruleRequired"
                 />
@@ -26,8 +26,7 @@
                     'Jambes',
                     'Pectoraux',
                     'Dos',
-                    'Biceps',
-                    'Triceps',
+                    'Bras',
                     'Epaules',
                     'Abdos',
                   ]"
@@ -49,18 +48,36 @@
               <v-col cols="6">
                 <v-text-field
                   v-model="nbRep[index]"
-                  label="rep *"
+                  label="Nombre de répétitions *"
                   required
                   :rules="ruleRequired"
+                  type="number"
                 />
               </v-col>
-              <v-col cols="6">
+              <v-col cols="5">
                 <v-text-field
                   v-model="weight[index]"
-                  label="poids *"
+                  label="Poids *"
                   required
                   :rules="ruleRequired"
+                  type="number"
+                  suffix="Kg"
                 />
+              </v-col>
+              <v-col class="center" v-if="index === indexSeries" cols="1">
+                <v-btn
+                  icon
+                  color="secondary"
+                  @click="removeSeries"
+                  :disabled="index === 1"
+                >
+                  <v-icon>mdi-delete</v-icon>
+                </v-btn>
+              </v-col>
+              <v-col class="center" v-if="index === indexSeries" cols="12">
+                <v-btn text color="secondary" @click="addSeries">
+                  Ajouter une série
+                </v-btn>
               </v-col>
             </v-row>
             <br />
@@ -69,12 +86,12 @@
         </v-form>
       </v-card-text>
       <v-card-actions>
-        <v-btn text color="blue darken-1" @click="reset">
+        <v-btn text color="primary" @click="reset">
           <v-icon left>mdi-notification-clear-all</v-icon>
           Effacer
         </v-btn>
         <v-spacer />
-        <v-btn text color="blue darken-1" @click="add">
+        <v-btn text color="primary" @click="add">
           <v-icon left>mdi-plus</v-icon>
           Ajouter
         </v-btn>
@@ -136,6 +153,7 @@ export default {
         };
         this.exercices.push(newExercice);
         this.series = [];
+        this.indexSeries = 1;
         this.reset();
       }
     },
@@ -160,13 +178,26 @@ export default {
     reset() {
       this.$refs.formExercice.reset();
     },
+    addSeries: function() {
+      this.indexSeries++;
+    },
+    removeSeries: function() {
+      if (this.indexSeries > 1) {
+        this.indexSeries--;
+      }
+    },
   },
 };
 </script>
 
 <style scoped>
 .message {
-  color: red;
+  color: var(--v-error-base);
   margin-left: 15px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

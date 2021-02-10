@@ -6,12 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     workouts: [],
-    exercices: [
-      // {
-      //   idWorkout: 3,
-      //   exercices: ["test"],
-      // },
-    ],
+    exercices: [],
   },
   getters: {
     getExerciceByWorkout: (state) => (id) => {
@@ -21,7 +16,6 @@ export default new Vuex.Store({
           exercices = ex.exercices;
         }
       });
-      console.log("exercices", exercices);
       return exercices;
     },
     test: (state) => {

@@ -9,15 +9,15 @@
         <v-form ref="formWorkout">
           <v-container>
             <v-row>
-              <v-col cols="6">
+              <v-col cols="8">
                 <v-text-field
                   v-model="name"
-                  label="Name *"
+                  label="Nom de l'entrainement *"
                   required
                   :rules="ruleRequired"
                 />
               </v-col>
-              <v-col cols="6">
+              <v-col cols="4">
                 <v-menu
                   v-model="menu"
                   :close-on-content-click="false"
@@ -28,7 +28,7 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-text-field
-                      v-model="date"
+                      v-model="formatDate"
                       label="Date *"
                       prepend-icon="mdi-calendar"
                       readonly
@@ -36,10 +36,11 @@
                       v-on="on"
                       required
                       :rules="ruleRequired"
+                      value="test"
                     ></v-text-field>
                   </template>
                   <v-date-picker
-                    v-model="date"
+                    :value="date"
                     @input="menu = false"
                   ></v-date-picker>
                 </v-menu>
@@ -50,12 +51,13 @@
                   <AddExercice />
                 </v-col>
               </v-row> -->
+            <br />
+            <small>*champs obligatoires</small>
           </v-container>
         </v-form>
-        <!-- <small>*champs obligatoires</small> -->
       </v-card-text>
       <v-card-actions>
-        <v-btn text color="blue darken-1" @click="reset">
+        <v-btn text color="primary" @click="reset">
           <v-icon left>mdi-notification-clear-all</v-icon>
           Effacer
         </v-btn>
@@ -71,6 +73,8 @@
 </template>
 
 <script>
+import moment from "moment";
+moment.locale("fr");
 export default {
   name: "AddWorkout",
   data: () => ({
@@ -79,14 +83,18 @@ export default {
     date: new Date().toISOString().substr(0, 10),
     menu: false,
   }),
-
+  computed: {
+    formatDate() {
+      return moment(this.date).format("L");
+    },
+  },
   methods: {
     validate: function() {
       if (this.$refs.formWorkout.validate()) {
         this.$store.commit("addWorkout", {
           id: this.$uuid.v4(),
           name: this.name,
-          date: this.date,
+          date: moment(this.date).format("LL"),
         });
         this.$emit("nextStep");
       }
