@@ -22,7 +22,7 @@
                 width="30px"
               ></v-img>
             </span>
-            <span>{{ exercice.name }} :</span>
+            <span>{{ exercice.name }} ({{ exercice.rest }} de repos) :</span>
           </v-list-item-title>
           <v-spacer />
           <v-list-item-subtitle

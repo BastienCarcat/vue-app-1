@@ -36,7 +36,6 @@
                       v-on="on"
                       required
                       :rules="ruleRequired"
-                      value="test"
                     ></v-text-field>
                   </template>
                   <v-date-picker
